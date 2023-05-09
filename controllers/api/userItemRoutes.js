@@ -14,7 +14,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.patch("/:id", withAuth, async (req, res) => {
   try {
     const userItemData = await UserItem.update(
       {
@@ -23,7 +23,6 @@ router.put("/:id", withAuth, async (req, res) => {
       {
         where: {
           id: req.params.id,
-          item_id: res.body.item_id,
           user_id: req.session.user_id,
         },
       }
@@ -43,7 +42,6 @@ router.delete("/:id", withAuth, async (req, res) => {
     const userItemData = await UserItem.destroy({
       where: {
         id: req.params.id,
-        item_id: res.body.item_id,
         user_id: req.session.user_id,
       },
     });
