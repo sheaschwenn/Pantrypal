@@ -1,4 +1,26 @@
 {
+  "name": "pantrypal",
+  "version": "1.0.0",
+  "description": "Grocery tracking application",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "watch": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheaschwenn/Pantrypal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheaschwenn/Pantrypal/issues"
+  },
+  "homepage": "https://github.com/sheaschwenn/Pantrypal#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",
