@@ -7,14 +7,14 @@ const UserItem = require("./UserItem")
 // });
 
 // items belong to many users through useritem
-Item.belongsToMany(User,{
+Item.belongsToMany(User, {
     through: UserItem,
     foreignKey: 'item_id'
 })
 
 // users belong to many items through useritems 
 
-User.belongsToMany(Item,{
+User.belongsToMany(Item, {
     through: UserItem,
     foreignKey: 'user_id'
 })

@@ -18,12 +18,12 @@ UserItem.init(
                 key: 'id'
             }
         },
-        user_id : {
+        user_id: {
             type: DataTypes.INTEGER,
-      references:{
-        model:'user',
-        key:'id'
-      }
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
@@ -32,7 +32,7 @@ UserItem.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user_item',
-      }
+    }
 );
 
 module.exports = UserItem
