@@ -1,38 +1,38 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class UserItem extends Model { }
+class UserItem extends Model {}
 
 UserItem.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        item_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'item',
-                key: 'id'
-            }
-        },
-        user_id : {
-            type: DataTypes.INTEGER,
-      references:{
-        model:'user',
-        key:'id'
-      }
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: true,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'user_item',
-      }
+    item_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "item",
+        key: "id",
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "user_item",
+  }
 );
 
-module.exports = UserItem
+module.exports = UserItem;
