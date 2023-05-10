@@ -7,6 +7,7 @@ Item.belongsToMany(User, {
   through: UserItem,
   foreignKey: "item_id",
   // onDelete: "CASCADE"
+  uniqueKey: false
 });
 
 // users belong to many items through useritems
@@ -14,7 +15,8 @@ Item.belongsToMany(User, {
 User.belongsToMany(Item, {
   through: UserItem,
   foreignKey: "user_id",
-  // onDelete: "CASCADE"
+  onDelete: "CASCADE",
+  uniqueKey: false
 });
 
 

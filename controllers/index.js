@@ -6,7 +6,7 @@ const landingRoutes = require('./landingRoutes')
 
 
 router.use('/', landingRoutes)
-// router.use('/dashboard', dashboardRoutes);
+router.use('/dashboard', dashboardRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
