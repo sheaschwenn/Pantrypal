@@ -11,6 +11,17 @@ UserItem.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    date_bought: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      onUpdate: sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+
+    bought: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
     item_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -26,17 +37,6 @@ UserItem.init(
       },
     },
 
-    date_bought: {
-      type: DataTypes.Date,
-      defaultValue: DataTypes.Types.NOW,
-      onUpdate: DataTypes.NOW,
-    },
-
-    bought: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false,
-    },
   },
   {
     hooks: {
