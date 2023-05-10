@@ -6,6 +6,7 @@ const UserItem = require("./UserItem");
 Item.belongsToMany(User, {
   through: UserItem,
   foreignKey: "item_id",
+  onDelete: "CASCADE"
 });
 
 // users belong to many items through useritems
@@ -13,6 +14,7 @@ Item.belongsToMany(User, {
 User.belongsToMany(Item, {
   through: UserItem,
   foreignKey: "user_id",
+  onDelete: "CASCADE"
 });
 
 module.exports = {
