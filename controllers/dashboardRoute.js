@@ -3,11 +3,13 @@ const { User, Item, UserItem } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Define a route handler for GET requests to the /dashboard endpoint
-router.get("/dashboard", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     // Find the user in the database with the ID stored in the session
-    const userData = await User.findByPk(req.session.user_id);
-
+    const userData = await User.findByPk({
+      include: [{model: Item, through: UserItem}],
+      where: {id: req.session.user_id}
+    })
     // Render the dashboard view with the user data and logged-in status
     res.render("dashboard", {
       userData: userData.get({ plain: true }), // Convert the user data to a plain object for rendering
@@ -20,7 +22,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 });
 
 // I changed to /dashboard/products and added withAuth. Is this correct?
-router.get("/dashboard/products", withAuth, async (req, res) => {
+router.get("/products", withAuth, async (req, res) => {
   try {
     const products = await Product.findAll({
       include: [
