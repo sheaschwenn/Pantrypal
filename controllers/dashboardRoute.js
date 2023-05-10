@@ -4,10 +4,10 @@ const withAuth = require("../utils/auth");
 
 // Define a route handler for GET requests to the /dashboard endpoint
 // add withAuth
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     // Find the user in the database with the ID stored in the session
-    const userData = await User.findByPk({
+    const userData = await User.findOne({
       attributes: { exclude: ["password"] },
       include: [{model: Item, through: UserItem}],
       where: {id: req.session.user_id},
@@ -23,24 +23,26 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+
 // I changed to /dashboard/products and added withAuth. Is this correct?
-router.get("/products", withAuth, async (req, res) => {
-  try {
-    const products = await Product.findAll({
-      include: [
-        Category,
-        {
-          model: Tag,
-          through: ProductTag,
-        },
-      ],
-    });
-    return res.json(products);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// router.get("/products", withAuth, async (req, res) => {
+//   try {
+//     const products = await Product.findAll({
+//       include: [
+//         Category,
+//         {
+//           model: Tag,
+//           through: ProductTag,
+//         },
+//       ],
+//     });
+//     return res.json(products);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
 

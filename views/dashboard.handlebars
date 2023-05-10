@@ -2,7 +2,7 @@
 
 <div class="row welcome-user">
   <div class="col-auto">
-    <h2><span>Welcome, {{username}}!</span></h2>
+    <h2><span>Welcome, {{name}}!</span></h2>
   </div>
 </div>
 
@@ -17,12 +17,14 @@
           </tr>
         </thead>
         <tbody>
-          {{#each itemList as |item|}}
+          {{#each items as |item|}}
+          {{#unless item.bought}}
           <tr>
             <td>{{item.name}}</td>
             <td><button class="btn btn-danger">Delete</button></td>
             <td><button class="btn btn-success">Add</button></td>
           </tr>
+          {{/unless}}
           {{/each}}
         </tbody>
     </div>
