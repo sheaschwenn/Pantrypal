@@ -13,16 +13,43 @@ const searchHandler = async(event) =>{
 }
 
 // addShoppingList
- const addShoppingList = async(event) =>{
+//  const addShoppingList = async(event) =>{
 
-    const foodName ; //pointer to the input field of the 
-    const response = await fetch('api/userItem',{
-        method: 'POST',
-        body:
-    })
- }
+//     const foodName ; //pointer to the input field of the 
+//     const response = await fetch('api/userItem',{
+//         method: 'POST',
+//         body:
+//     })
+//  }
 
 // deleteShoppingList
+const deleteShoppingList = async(event) =>{
+    const shoppingList = document.querySelector('#shopping-table')
+    console.log("called")
+
+    if(event.target.textContent === "Delete"){
+        console.log(event.target)
+        const id = event.target.dataset.id
+        console.log(id)
+    try{
+        const response = await fetch(`/api/userItem/${id}`,{
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        if(response.ok){
+            document.location.replace('/dashboard')
+        }else{
+            addListener("delete failed")
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+}
+console.log(document.querySelector('#shopping-table'))
+document.querySelector('#shopping-table').addEventListener('click',deleteShoppingList)
+
 
 // addPantry
 // deletePantry
