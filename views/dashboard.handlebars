@@ -1,94 +1,74 @@
-<div class="row welcome-user">
-        <div class="col-auto">
-          <h2><span>Welcome, {{username}}!</span></h2>
-        </div>
-      </div>
-  
-{{!-- shopping list container --}}
-      <div class="dashborardcontainer">
-        <div class="row">
-          <div class="col-md-6 shopping-list">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                 <h3>Shopping List</h3>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Item 1</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                  <td><button class="btn btn-success">Add</button></td>
-                </tr>
-                <tr>
-                  <td>Item 2</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                  <td><button class="btn btn-success">Add</button></td>
-                </tr>
-                <tr>
-                  <td>Item 3</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                  <td><button class="btn btn-success">Add</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-{{!-- add to shopping list --}}
-          <div class="col-md-6 add-table">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <h4>Add an item to shopping List</h4>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="text" class="form-control" placeholder="Enter item"></td>
-                  <td><button class="btn btn-success">Add</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-{{!-- Food in storage  --}}
-          <div class="col-md-12 storage-table">
-            <table class="table table-striped">
-              <h2>Food in Pantry </h2>
-              <thead>
-                <tr>
-                  <th>Food</th>
-                  <th>Food Days Till Expiration</th>
-                  <th>Date Purchased</th>
-                  <th>Item Category</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Canned beans</td>
-                  <td>365</td>
-                  <td>05/08/2023</td>
-                  <td>Canned food</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
-                <tr>
-                  <td>Pasta</td>
-                  <td>730</td>
-                  <td>05/06/2023</td>
-                  <td>Dry goods</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
-                <tr>
-                  <td>Applesauce</td>
-                  <td>180</td>
-                  <td>05/03/2023</td>
-                  <td>Canned food</td>
-                  <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
 
-        </div>
-      </div>
-      
+
+<div class="row welcome-user">
+  <div class="col-auto">
+    <h2><span>Welcome, {{username}}!</span></h2>
+  </div>
+</div>
+
+{{!-- shopping list container --}}
+<div class="dashborardcontainer">
+  <div class="row">
+    <div class="col-md-6 shopping-list">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h3>Shopping List</h3>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each itemList as |item|}}
+          <tr>
+            <td>{{item.name}}</td>
+            <td><button class="btn btn-danger">Delete</button></td>
+            <td><button class="btn btn-success">Add</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+    </div>
+
+    {{!-- add to shopping list --}}
+    <div class="col-md-6 add-table">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4>Add an item to shopping List</h4>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="form-control" placeholder="Enter item"></td>
+            <td><button class="btn btn-success">Add</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {{!-- Food in storage --}}
+    <div class="col-md-12 storage-table">
+      <table class="table table-striped">
+        <h2>Food in Pantry </h2>
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Food Days Till Expiration</th>
+            <th>Date Purchased</th>
+            <th>Item Category</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Canned beans</td>
+            <td>365</td>
+            <td>05/08/2023</td>
+            <td>Canned food</td>
+            <td><button class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
+{{!-- works --}}
