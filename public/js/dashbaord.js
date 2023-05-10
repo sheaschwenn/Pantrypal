@@ -13,14 +13,23 @@ const searchHandler = async(event) =>{
 }
 
 // addShoppingList
-//  const addShoppingList = async(event) =>{
+ const addShoppingList = async(event) =>{
 
-//     const foodName ; //pointer to the input field of the 
-//     const response = await fetch('api/userItem',{
-//         method: 'POST',
-//         body:
-//     })
-//  }
+    const foodName = document.querySelector('#search').value.trim()
+    console.log(foodName)
+    const response = await fetch('/api/userItem',{
+        method: 'POST',
+        body: JSON.stringify({foodName}),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    if(response.ok){
+        document.location.replace('/dashboard')
+        }else{
+            console.log("no item added")
+        }
+
+    }
+
 
 // deleteShoppingList
 const deleteShoppingList = async(event) =>{
@@ -39,7 +48,7 @@ const deleteShoppingList = async(event) =>{
         if(response.ok){
             document.location.replace('/dashboard')
         }else{
-            addListener("delete failed")
+            console.log("delete failed")
         }
     }catch(err){
         console.log(err)
@@ -50,7 +59,10 @@ const deleteShoppingList = async(event) =>{
 console.log(document.querySelector('#shopping-table'))
 document.querySelector('#shopping-table').addEventListener('click',deleteShoppingList)
 
-
+console.log(document.querySelector('#search-btn'))
+document.querySelector('#search-btn').addEventListener('click',addShoppingList)
 // addPantry
 // deletePantry
+
+
 
