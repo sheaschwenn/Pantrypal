@@ -25,8 +25,27 @@ UserItem.init(
         key: "id",
       },
     },
+
+    date_bought: {
+      type: DataTypes.Date,
+      defaultValue: DataTypes.Types.NOW,
+      onUpdate: DataTypes.NOW,
+    },
+
+    bought: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   },
   {
+    hooks: {
+      beforeUpdate: async (userItem, options) => {
+        if (userItem.changed("bought") && userItem.bought === true) {
+          userItem.bought_date = new Date();
+        }
+      },
+    },
     sequelize,
     timestamps: true,
     freezeTableName: true,
