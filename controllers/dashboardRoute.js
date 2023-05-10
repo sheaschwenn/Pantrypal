@@ -19,7 +19,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+// I changed to /dashboard/products and added withAuth. Is this correct?
+router.get("/dashboard/products", withAuth, async (req, res) => {
   try {
     const products = await Product.findAll({
       include: [
