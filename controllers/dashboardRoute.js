@@ -3,17 +3,19 @@ const { User, Item, UserItem } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Define a route handler for GET requests to the /dashboard endpoint
-router.get("/", withAuth, async (req, res) => {
+// add withAuth
+router.get("/", async (req, res) => {
   try {
     // Find the user in the database with the ID stored in the session
     const userData = await User.findByPk({
+      attributes: { exclude: ["password"] },
       include: [{model: Item, through: UserItem}],
-      where: {id: req.session.user_id}
-    })
+      where: {id: req.session.user_id},
+    });
+    const items = userData.get({ plain: true});
     // Render the dashboard view with the user data and logged-in status
-    res.render("dashboard", {
-      userData: userData.get({ plain: true }), // Convert the user data to a plain object for rendering
-      loggedIn: req.session.loggedIn, // Set the logged-in status for the view
+    res.render("dashboard", {...items,
+      logged_in: req.session.logged_in, // Set the logged-in status for the view
     });
   } catch (err) {
     // If there was an error with the database query, send a JSON error response with a 500 status code
@@ -39,6 +41,8 @@ router.get("/products", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
 
 // users food items that theyve added to their shopping list and their pantry
 //user table item table join table useritem table
