@@ -4,7 +4,8 @@ const { User } = require("../../models");
 router.post('/', async (req, res) => {
   try {
       const newUser = await User.create({
-          user_name: req.body.email,
+          name: req.body.name,
+          email: req.body.email,
           password: req.body.password,
       });
 
