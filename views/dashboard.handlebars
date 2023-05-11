@@ -23,7 +23,7 @@
       <tbody>
         {{#each items as |item|}}
         {{#unless item.user_item.bought}}
-        <tr class="shopping-table text-light">
+        <tr class="shopping-table text-dark">
           <td>{{item.name}}</td>
           <td><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
             <button data-id={{item.user_item.id}} class="btn btn-success btn-delete add-pantry">Add</button>
@@ -68,7 +68,7 @@
       <tbody>
         {{#each items as |item|}}
         {{#if item.user_item.bought}}
-        <tr class="text-light">
+        <tr class="text-dark">
         <td>{{item.name}}</td>
         <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
         <td>{{format_date item.user_item.date_bought}}</td>
