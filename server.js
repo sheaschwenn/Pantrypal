@@ -4,8 +4,6 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const dotenv = require("dotenv");
 
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
