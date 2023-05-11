@@ -1,3 +1,9 @@
+/* 
+block 232,234,233
+background 
+*/
+
+
 
 *{
   margin: 0;
@@ -9,7 +15,7 @@
 
 
 body{
-  background: rgb(0, 0, 0);
+  background: rgb(232,234,233);
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -114,9 +120,15 @@ span {
   text-align: center;
   width: 300px;
   height: 300px;
-  border: solid blanchedalmond;
+  /* border: solid rgb(255, 153, 0); */
+
   margin-top: 200px;
   border-radius: 15px;
+
+  /* box shadow bottom/right */
+  box-shadow: 28px 28px 50px 0px rgba(15, 39, 80, 0.16),
+  /* box shadow top left */
+  -23px -23px 45px 0px rgba(255, 255, 255, 1);
 }  
 
 .name,
