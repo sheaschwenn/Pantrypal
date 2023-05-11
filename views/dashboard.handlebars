@@ -25,8 +25,7 @@
         {{#unless item.user_item.bought}}
         <tr class="shopping-table text-dark ">
           <td>{{item.name}}</td>
-          <div class="d-flex justify-content-between gap-2">
-            <td><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
+          <td class="d-flex justify-content-end"><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
             <button data-id={{item.user_item.id}} class="btn btn-success btn-delete add-pantry">Add</button>
             </td>
           </div>
@@ -38,7 +37,7 @@
   </div>
 
   <!-- add to shopping list -->
-  <div class="col-lg-6 add-table">
+  <div class="col-lg-6 col--12 add-table">
     <table class="table table-striped">
       <thead>
         <tr>
