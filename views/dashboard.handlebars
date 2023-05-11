@@ -65,7 +65,7 @@
           {{#if item.user_item.bought}}
           <tr>
             <td>{{item.name}}</td>
-            <td>{{item.daysUntilExpiration}}</td>
+            <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
             <td>{{format_date item.user_item.date_bought}}</td>
             <td>{{expiration_date item.user_item.date_bought item.daysUntilExpiration}}</td>
             <td>{{item.category}}</td>
