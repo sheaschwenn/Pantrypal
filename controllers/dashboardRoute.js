@@ -13,6 +13,8 @@ router.get("/", withAuth, async (req, res) => {
       where: {id: req.session.user_id},
     });
     const items = userData.get({ plain: true});
+
+    console.log(items)
     // Render the dashboard view with the user data and logged-in status
     res.render("dashboard", {...items,
       logged_in: req.session.logged_in, // Set the logged-in status for the view

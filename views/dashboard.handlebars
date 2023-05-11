@@ -10,7 +10,7 @@
 <div class="dashborardcontainer">
   <div class="row">
     <div class="col-md-6 shopping-list">
-      <table class="table table-striped">
+      <table id="shopping-table" class="table table-striped">
         <thead>
           <tr>
             <h3>Shopping List</h3>
@@ -18,15 +18,16 @@
         </thead>
         <tbody>
           {{#each items as |item|}}
-          {{#unless item.bought}}
-          <tr>
+          {{#unless item.user_item.bought}}
+          <tr >
             <td>{{item.name}}</td>
-            <td><button class="btn btn-danger">Delete</button></td>
-            <td><button class="btn btn-success">Add</button></td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-danger delete-list">Delete</button></td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-success add-pantry">Add</button></td>
           </tr>
           {{/unless}}
           {{/each}}
         </tbody>
+        </table>
     </div>
 
     {{!-- add to shopping list --}}
@@ -39,33 +40,39 @@
         </thead>
         <tbody>
           <tr>
-            <td><input type="text" class="form-control" placeholder="Enter item"></td>
-            <td><button class="btn btn-success">Add</button></td>
+            <td><input id="search" type="text" class="form-control" placeholder="Enter item"></td>
+            <td><button id="search-btn" class="btn btn-success">Add</button></td>
           </tr>
         </tbody>
       </table>
     </div>
     {{!-- Food in storage --}}
     <div class="col-md-12 storage-table">
-      <table class="table table-striped">
+      <table id="pantry-table" class="table table-striped">
         <h2>Food in Pantry </h2>
         <thead>
           <tr>
             <th>Food</th>
-            <th>Food Days Till Expiration</th>
+            <th>Days Till Expiration</th>
             <th>Date Purchased</th>
+            <th>Expiration Date</th>
             <th>Item Category</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
+          {{#each items as |item|}}
+          {{#if item.user_item.bought}}
           <tr>
-            <td>Canned beans</td>
-            <td>365</td>
-            <td>05/08/2023</td>
-            <td>Canned food</td>
-            <td><button class="btn btn-danger">Delete</button></td>
+            <td>{{item.name}}</td>
+            <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
+            <td>{{format_date item.user_item.date_bought}}</td>
+            <td>{{expiration_date item.user_item.date_bought item.daysUntilExpiration}}</td>
+            <td>{{item.category}}</td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-danger">Delete</button></td>
           </tr>
+          {{/if}}
+          {{/each}}
         </tbody>
       </table>
     </div>
@@ -73,4 +80,6 @@
 
   </div>
 </div>
+
+<script src="/js/dashbaord.js"></script>
 {{!-- works --}}

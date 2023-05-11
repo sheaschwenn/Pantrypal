@@ -44,6 +44,11 @@ router.post("/", withAuth, async (req, res) => {
     }
   })
 
+router.get("/",withAuth,async (req, res) => {{
+  const userItemData = await UserItem.findAll({where:{user_id: req.session.user_id}})
+  res.status(200).json(userItemData);
+}})
+
 
 router.patch("/:id", withAuth, async (req, res) => {
   try {

@@ -14,7 +14,7 @@ UserItem.init(
     date_bought: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-      onUpdate: sequelize.literal('CURRENT_TIMESTAMP'),
+      // onUpdate: sequelize.literal('CURRENT_TIMESTAMP'),
     },
 
     bought: {
