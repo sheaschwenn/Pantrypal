@@ -18,11 +18,11 @@
         </thead>
         <tbody>
           {{#each items as |item|}}
-          {{#unless item.bought}}
+          {{#unless item.user_item.bought}}
           <tr >
             <td>{{item.name}}</td>
-            <td><button data-id= {{item.user_item.id}} class="btn btn-danger">Delete</button></td>
-            <td><button class="btn btn-success">Add</button></td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-danger delete-list">Delete</button></td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-success add-pantry">Add</button></td>
           </tr>
           {{/unless}}
           {{/each}}
@@ -60,13 +60,17 @@
           </tr>
         </thead>
         <tbody>
+          {{#each items as |item|}}
+          {{#if item.user_item.bought}}
           <tr>
-            <td>Canned beans</td>
-            <td>365</td>
-            <td>05/08/2023</td>
-            <td>Canned food</td>
+            <td>{{item.name}}</td>
+            <td>{{item.daysUntilExpiration}}</td>
+            <td>{{item.user_item.date_bought}}</td>
+            <td>{{item.category}}</td>
             <td><button class="btn btn-danger">Delete</button></td>
           </tr>
+          {{/if}}
+          {{/each}}
         </tbody>
       </table>
     </div>

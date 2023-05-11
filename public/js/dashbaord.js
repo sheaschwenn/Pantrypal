@@ -56,13 +56,39 @@ const deleteShoppingList = async(event) =>{
 }
 
 }
+
+// addPantry
+
+const addPantry = async(event) =>{
+    if(event.target.textContent === "Add"){
+        console.log(event.target)
+        const id = event.target.dataset.id
+        console.log(id)
+    try{
+        const response = await fetch(`/api/userItem/${id}`,{
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        if(response.ok){
+            console.log("patch worked")
+            document.location.replace('/dashboard')
+        }else{
+            console.log("add failed")
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+}
+// deletePantry
+
+
 console.log(document.querySelector('#shopping-table'))
 document.querySelector('#shopping-table').addEventListener('click',deleteShoppingList)
-
+document.querySelector('#shopping-table').addEventListener('click',addPantry)
 console.log(document.querySelector('#search-btn'))
 document.querySelector('#search-btn').addEventListener('click',addShoppingList)
-// addPantry
-// deletePantry
+
 
 
 
