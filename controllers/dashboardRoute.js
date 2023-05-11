@@ -23,24 +23,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/products", withAuth, async (req, res) => {
-//   try {
-//     const products = await Product.findAll({
-//       include: [
-//         Category,
-//         {
-//           model: Tag,
-//           through: ProductTag,
-//         },
-//       ],
-//     });
-//     return res.json(products);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 module.exports = router;
 
 // users food items that theyve added to their shopping list and their pantry
