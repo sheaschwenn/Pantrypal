@@ -8,7 +8,7 @@
 
 <div class="row welcome-user">
   <div class="col-auto">
-    <h2><span>Welcome, {{name}}!</span></h2>
+    <h2><span>Hi {{name}}!</span></h2>
   </div>
 </div>
 
@@ -70,7 +70,7 @@
       <tbody>
         {{#each items as |item|}}
         {{#if item.user_item.bought}}
-        <tr class="text-light"></tr>
+        <tr class="text-light">
         <td>{{item.name}}</td>
         <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
         <td>{{format_date item.user_item.date_bought}}</td>
@@ -89,4 +89,4 @@
 
 
 <script src="/js/dashbaord.js"></script>
-{{!-- works --}}
+<!-- works -->

@@ -127,7 +127,8 @@ span {
   border-radius: 15px;
 }  
 
-.username,
+.name,
+.email,
 .password{
   width: 250px;
   height: 35px;
