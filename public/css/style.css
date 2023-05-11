@@ -135,16 +135,16 @@ span {
     box-shadow: 15px 15px 25px  rgba(15, 39, 80, 0.16),
       /* box shadow top left */ 
       -10px -10px 20px  rgba(255, 255, 255, 1);
-  }
-  /* focus on container :focus on input container */
+    }
+    /* focus on container :focus on input container */
 
 .navBar {
   /* background: radial-gradient(circle at 10% 20%, rgb(255, 252, 214) 0%, rgba(255, 102, 102, 0.44) 90%); */
   /* box shadow bottom/right */
-
+  
   border-radius: 15px;
   box-shadow: 20px 20px 50px rgba(15, 39, 80, 0.16),
-    /* box shadow top left */ -15px -15px 45px rgba(255, 255, 255, 1);
+  /* box shadow top left */ -15px -15px 45px rgba(255, 255, 255, 1);
   margin: 20px 20px 20px 20px;
 }
 
@@ -189,10 +189,10 @@ h3 {
   font-family: "Work Sans", sans-serif;
   font-weight: 800;
   font-size: 3em;
-
+  
   line-height: 0.9em;
   margin-left: 15px;
-
+  
   margin-top: 10px;
 }
 
@@ -213,41 +213,52 @@ h3 {
     #476098 66.666%,
     #476098 83.333%,
     #a7489b 83.333%
-  );
-
-  /* Set thee background size and repeat properties. */
-  background-size: 57%;
-  background-repeat: repeat;
-
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
+    );
+    
+    /* Set thee background size and repeat properties. */
+    background-size: 57%;
+    background-repeat: repeat;
+    
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animate the text when loading the element. */
+    /* This animates it on page load and when hovering out. */
+    animation: rainbow-text-animation-rev 0.5s ease forwards;
+    
+    cursor: pointer;
+  }
+  
+  /* Add animation on hover. */
+  .rainbow-text:hover {
+    animation: rainbow-text-animation 0.5s ease forwards;
+  }
+  
+  /*  Food Storage ================== title */
+  .pantry {
+    background: none;
+    /* box shadow bottom/right */
+    box-shadow: 15px 15px 25px  rgba(15, 39, 80, 0.16),
+      /* box shadow top left */ 
+      -10px -10px 20px  rgba(255, 255, 255, 1);
+    margin-bottom: 50px;
+    border-radius: 15px;
+    padding: 3px 20px;
+    font-weight: 700;
+    top: 40%;
+    left: 40%;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #21d4f3, #081ccc, #cf23cf, #e6a61c);
   -webkit-text-fill-color: transparent;
-
-  /* Animate the text when loading the element. */
-  /* This animates it on page load and when hovering out. */
-  animation: rainbow-text-animation-rev 0.5s ease forwards;
-
-  cursor: pointer;
-}
-
-/* Add animation on hover. */
-.rainbow-text:hover {
-  animation: rainbow-text-animation 0.5s ease forwards;
-}
-
-/*  Food Storage ================== title */
-.pantry {
-  border-radius: 15px;
-  padding: 3px;
-  font-weight: 700;
-  top: 40%;
-  left: 40%;
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(to right, #21f344, #081ccc, #cf23cf, #eedd44);
-  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  border: none;
+  display: inline-block;
+  width: auto; /* Adjust the width as needed */
+  margin-left: 20px; /* Add spacing on the left side */
+  margin-right: 20px; /* Add spacing on the right side */
 }
 
 /*  btn ========================== logout */
@@ -257,8 +268,8 @@ h3 {
   font-weight: 600;
   /* box shadow bottom/right */
   box-shadow: 5px 5px 25px 0px rgba(15, 39, 80, 0.16),
-    /* box shadow top left */ 
-    -4px -4px 20px 0px rgba(255, 255, 255, 1);
+  /* box shadow top left */ 
+  -4px -4px 20px 0px rgba(255, 255, 255, 1);
 }
 
 /* Move the background and make it larger. */

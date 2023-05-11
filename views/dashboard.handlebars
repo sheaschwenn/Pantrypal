@@ -23,11 +23,13 @@
       <tbody>
         {{#each items as |item|}}
         {{#unless item.user_item.bought}}
-        <tr class="shopping-table text-dark">
+        <tr class="shopping-table text-dark ">
           <td>{{item.name}}</td>
-          <td><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
+          <div class="d-flex justify-content-between gap-2">
+            <td><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
             <button data-id={{item.user_item.id}} class="btn btn-success btn-delete add-pantry">Add</button>
-          </td>
+            </td>
+          </div>
         </tr>
         {{/unless}}
         {{/each}}
