@@ -9,7 +9,7 @@
 
 
 body{
-  background: black;
+  background: rgb(0, 0, 0);
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -17,7 +17,7 @@ body{
 }
 
 
-/* on  going outline */
+/* ongoing ================  outline */
 span {
   position: absolute;
   border-radius: 100vmax;
@@ -91,7 +91,7 @@ span {
 }
 
 
-/* header font*/
+/* header ================ font*/
 
 
 .welcome{
@@ -101,18 +101,10 @@ span {
   -webkit-text-fill-color: transparent;
 }
 
-/*sign up*/
-/* .navBack{
-  background: bisque;
-  font-weight: 600;
-} */
 
-.signUp{
-  color: rgb(255, 202, 137);
-  
-}
 
-/*login and signup box*/
+
+/*login and ==================== signup box*/
 
 .container{
   display: flex;
@@ -234,7 +226,7 @@ h3 {
 }
 
 
-/*  Food Storage title */
+/*  Food Storage ================== title */
 .pantry {
   border: solid bisque;
   border-radius: 15px;

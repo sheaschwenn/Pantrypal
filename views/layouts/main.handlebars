@@ -19,17 +19,20 @@
         {{#if logged_in}}
 
           <a class="nav-link" href="/dashboard"></a>
-           <button class="btn btn-outline-success btn-logout" type="submit">logout</button>
+           <button class="btn btn-outline-success btn-logout" type="submit" id="logout">logout</button>
         </div>
     </nav>
   </div>
 
   
   {{else}}
-
-  <div>
-    <a class="nav-link" href="/login"></a>
+     </div>
+   </nav>
   </div>
+
+
+    <a class="nav-link" href="/login"></a>
+  
 
   {{/if}}
     <main>
