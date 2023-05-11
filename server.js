@@ -15,20 +15,28 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
-
+// Sets up session and connect to our Sequelize db
+dotenv.config();
 const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
+  secret: process.env.SESSION_SECRET,
+  cookie: {
+    // maxAge sets the maximum age for the session to be active. Listed in milliseconds.
+    maxAge: 24 * 60 * 60 * 1000,
+    // httpOnly: false,
+    // secure: false,
+    // sameSite: "strict",
+  },
   resave: false,
   saveUninitialized: true,
+  // Sets up session store
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
-
 app.use(session(sess));
+
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
