@@ -20,9 +20,7 @@ const sess = {
   cookie: {
     // maxAge sets the maximum age for the session to be active. Listed in milliseconds.
     maxAge: 24 * 60 * 60 * 1000,
-    // httpOnly: false,
-    // secure: false,
-    // sameSite: "strict",
+  
   },
   resave: false,
   saveUninitialized: true,
