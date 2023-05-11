@@ -10,7 +10,7 @@ const signupFormHandler = async (event) => {
     if (name && email && password) {
       // Send a POST request to the users route to create a new user
       try {
-        await fetch('/api/user', {
+        await fetch('/api/user/', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
