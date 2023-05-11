@@ -67,7 +67,7 @@
             <td>{{item.daysUntilExpiration}}</td>
             <td>{{item.user_item.date_bought}}</td>
             <td>{{item.category}}</td>
-            <td><button class="btn btn-danger">Delete</button></td>
+            <td><button data-id= {{item.user_item.id}} class="btn btn-danger">Delete</button></td>
           </tr>
           {{/if}}
           {{/each}}

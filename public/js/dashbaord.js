@@ -81,14 +81,35 @@ const addPantry = async(event) =>{
 }
 }
 // deletePantry
+const deletePantry = async(event) =>{
+    
 
+    if(event.target.textContent === "Delete"){
+        const id = event.target.dataset.id
+        
+    try{
+        const response = await fetch(`/api/userItem/${id}`,{
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        if(response.ok){
+            document.location.replace('/dashboard')
+        }else{
+            console.log("delete failed")
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+}
 
 console.log(document.querySelector('#shopping-table'))
 document.querySelector('#shopping-table').addEventListener('click',deleteShoppingList)
 document.querySelector('#shopping-table').addEventListener('click',addPantry)
 console.log(document.querySelector('#search-btn'))
 document.querySelector('#search-btn').addEventListener('click',addShoppingList)
-
+document.querySelector('#pantry-table').addEventListener('click',deletePantry)
 
 
 
