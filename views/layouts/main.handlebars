@@ -1,42 +1,43 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    {{!-- <link rel="stylesheet" href="/public/css/style.css" /> --}}
-		
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />  
+  <link rel="stylesheet" href="./css/style.css"/>
+  <title>PantryPal</title>
+
+</head>
 
   <body>
 <div>
     <nav class="navbar bg-body-tertiary navBar ">
       <div class="container-fluid">
-        <a class="navbar-brand">Welcome to PantryPal 🛒</a>
+        <h3 class="rainbow-text">Welcome To PantryPal 🛒<h3>
         {{#if logged_in}}
 
           <a class="nav-link" href="/dashboard"></a>
-          <button class="btn btn-outline-success" type="submit" id="logout">logout</button>
+           <button class="btn btn-outline-success btn-logout" type="submit" id="logout">logout</button>
         </div>
     </nav>
   </div>
 
   
   {{else}}
-
-  <div>
-    <a class="nav-link" href="/login"></a>
+     </div>
+   </nav>
   </div>
 
+
+    <a class="nav-link" href="/login"></a>
+  
+
   {{/if}}
-    <main class="container">
-      {{!-- double check correct --}}
+    <main>
+      <!--files go here-->
+      
   {{{body}}}
     </main>
       

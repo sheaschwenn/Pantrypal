@@ -1,85 +1,90 @@
-
+<!--on going outline-->
+<span class="top"></span>
+<span class="right"></span>
+<span class="bottom"></span>
+<span class="left"></span>
 
 <div class="row welcome-user">
   <div class="col-auto">
-    <h2><span>Welcome, {{name}}!</span></h2>
+    <h2><span class="say-hi">Hi {{name}}!</span></h2>
   </div>
 </div>
 
-{{!-- shopping list container --}}
-<div class="dashborardcontainer">
-  <div class="row">
-    <div class="col-md-6 shopping-list">
-      <table id="shopping-table" class="table table-striped">
-        <thead>
-          <tr>
-            <h3>Shopping List</h3>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each items as |item|}}
-          {{#unless item.user_item.bought}}
-          <tr >
-            <td>{{item.name}}</td>
-            <td><button data-id= {{item.user_item.id}} class="btn btn-danger delete-list">Delete</button></td>
-            <td><button data-id= {{item.user_item.id}} class="btn btn-success add-pantry">Add</button></td>
-          </tr>
-          {{/unless}}
-          {{/each}}
-        </tbody>
-        </table>
-    </div>
+<!-- shopping list container -->
 
-    {{!-- add to shopping list --}}
-    <div class="col-md-6 add-table">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <h4>Add an item to shopping List</h4>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input id="search" type="text" class="form-control" placeholder="Enter item"></td>
-            <td><button id="search-btn" class="btn btn-success">Add</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    {{!-- Food in storage --}}
-    <div class="col-md-12 storage-table">
-      <table id="pantry-table" class="table table-striped">
-        <h2>Food in Pantry </h2>
-        <thead>
-          <tr>
-            <th>Food</th>
-            <th>Days Till Expiration</th>
-            <th>Date Purchased</th>
-            <th>Expiration Date</th>
-            <th>Item Category</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each items as |item|}}
-          {{#if item.user_item.bought}}
-          <tr>
-            <td>{{item.name}}</td>
-            <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
-            <td>{{format_date item.user_item.date_bought}}</td>
-            <td>{{expiration_date item.user_item.date_bought item.daysUntilExpiration}}</td>
-            <td>{{item.category}}</td>
-            <td><button data-id= {{item.user_item.id}} class="btn btn-danger">Delete</button></td>
-          </tr>
-          {{/if}}
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
-
-
+<div class="row">
+  <div class="col-lg-6 shopping-list">
+    <table id="shopping-table" class="table table-striped">
+      <thead>
+        <tr>
+          <h4 class="text-center shopping-font">Shopping List</h4>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items as |item|}}
+        {{#unless item.user_item.bought}}
+        <tr class="shopping-table text-light">
+          <td>{{item.name}}</td>
+          <td><button data-id={{item.user_item.id}} class="btn btn-danger btn-add delete-list">Delete</button>
+            <button data-id={{item.user_item.id}} class="btn btn-success btn-delete add-pantry">Add</button>
+          </td>
+        </tr>
+        {{/unless}}
+        {{/each}}
+      </tbody>
+    </table>
   </div>
+
+  <!-- add to shopping list -->
+  <div class="col-lg-6 add-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <h4 class="text-center add-font">Add item to shopping List</h4>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input id="search" type="text" class="form-control" placeholder="Enter item"></td>
+          <td><button id="search-btn" class="btn btn-success">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--food in storage-->
+  <div class="col-md-12 storage-table text-center">
+    <table id="pantry-table" class="table table-striped">
+      <h2 class="pantry">Food in Pantry </h2>
+      <thead>
+        <tr class="stored-items ">
+          <th>Food</th>
+          <th>Days Till Expiration</th>
+          <th>Date Purchased</th>
+          <th>Expiration Date</th>
+          <th>Item Category</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items as |item|}}
+        {{#if item.user_item.bought}}
+        <tr class="text-light">
+        <td>{{item.name}}</td>
+        <td>{{days_until_expiration item.user_item.date_bought item.daysUntilExpiration}}</td>
+        <td>{{format_date item.user_item.date_bought}}</td>
+        <td>{{expiration_date item.user_item.date_bought item.daysUntilExpiration}}</td>
+        <td>{{item.category}}</td>
+        <td><button data-id={{item.user_item.id}} class="btn btn-danger">Delete</button></td>
+        </tr>
+        {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+
 </div>
+
 
 <script src="/js/dashbaord.js"></script>
-{{!-- works --}}
+<!-- works -->
