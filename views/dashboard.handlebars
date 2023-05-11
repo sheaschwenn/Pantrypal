@@ -53,8 +53,9 @@
         <thead>
           <tr>
             <th>Food</th>
-            <th>Food Days Till Expiration</th>
+            <th>Days Till Expiration</th>
             <th>Date Purchased</th>
+            <th>Expiration Date</th>
             <th>Item Category</th>
             <th>Delete</th>
           </tr>
@@ -65,7 +66,8 @@
           <tr>
             <td>{{item.name}}</td>
             <td>{{item.daysUntilExpiration}}</td>
-            <td>{{item.user_item.date_bought}}</td>
+            <td>{{format_date item.user_item.date_bought}}</td>
+            <td>{{expiration_date item.user_item.date_bought item.daysUntilExpiration}}</td>
             <td>{{item.category}}</td>
             <td><button data-id= {{item.user_item.id}} class="btn btn-danger">Delete</button></td>
           </tr>
