@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![PantryPal Screenshot](./screenshot.png)
+![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)
 
 ## Description
 
