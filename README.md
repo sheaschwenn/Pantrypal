@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)
+[![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)](https://shopwithpantrypal.herokuapp.com/)
 
 ## Description
 
@@ -21,7 +21,7 @@ The goal of this project is to create a real-world full-stack application that s
 - [Links](#links)
 - [Made By](#made-by)
 
-## Installation
+## Installation on vs code 
 
 To run PantryPal locally, follow these steps:
 
@@ -119,7 +119,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Links
 
 - [Repository](https://github.com/sheaschwenn/Pantrypal)
-- [Live Demo]()
+- [Link to PantryPAl](https://shopwithpantrypal.herokuapp.com/)
 
 ## Made By
 
