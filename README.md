@@ -1,7 +1,14 @@
 # PantryPal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+[![npm version](https://img.shields.io/npm/v/console.table.svg)](https://www.npmjs.com/package/console.table)
+[![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com)
 
+
+
+### Website
 [![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)](https://shopwithpantrypal.herokuapp.com/)
 
 ## Description
