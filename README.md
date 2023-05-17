@@ -1,8 +1,15 @@
 # PantryPal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+[![npm version](https://img.shields.io/npm/v/console.table.svg)](https://www.npmjs.com/package/console.table)
+[![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com)
 
-![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)
+
+
+### Website
+[![PantryPal Screenshot](./assets/images/dashboard%20main%20use.gif)](https://shopwithpantrypal.herokuapp.com/)
 
 ## Description
 
@@ -21,7 +28,7 @@ The goal of this project is to create a real-world full-stack application that s
 - [Links](#links)
 - [Made By](#made-by)
 
-## Installation
+## Installation on vs code 
 
 To run PantryPal locally, follow these steps:
 
@@ -119,7 +126,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Links
 
 - [Repository](https://github.com/sheaschwenn/Pantrypal)
-- [Live Demo]()
+- [Link to PantryPAl](https://shopwithpantrypal.herokuapp.com/)
 
 ## Made By
 
